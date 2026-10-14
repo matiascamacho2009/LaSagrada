@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#173f2a">
+<title>La Sagrada | Pedidos 24 horas</title>
+<link rel="stylesheet" href="css/estilos.css">
+
+</head>
+<body>
+<header>
+  <div class="brand"><div class="logo">🌿</div><span>LA SAGRADA</span></div>
+  <nav aria-label="Navegación"><a href="#servicio">Nuestro servicio</a><a href="#pedido">Hacer pedido</a><a href="#pedido">Reservar</a></nav>
+</header>
+<section class="hero" id="inicio">
+  <div>
+    <div class="eyebrow">San Carlos · Atención continua</div>
+    <h1>Tu pedido de hoja, a cualquier hora.</h1>
+    <p>Una forma práctica de reservar o solicitar tu producto. Haz tu pedido en línea y elige si prefieres recogerlo en tienda o consultar la entrega.</p>
+    <div class="actions"><a class="btn btn-primary" href="#pedido">🛒 Pedir ahora <span>→</span></a><a class="btn btn-outline" href="#servicio">Conocer el servicio</a></div>
+  </div>
+  <div class="hero-card">
+    <div class="leaf-art">🌿</div>
+    <h2>Disponible cuando lo necesitas</h2>
+    <p>Atención por canales digitales y en tienda, con disponibilidad anunciada las 24 horas.</p>
+    <div class="pills"><span class="pill">Pedidos online</span><span class="pill">Reserva anticipada</span><span class="pill">San Carlos</span></div>
+  </div>
+</section>
+<main>
+  <section id="servicio">
+    <div class="section-head">
+      <div><div class="tag">Simple y conveniente</div><h2>¿Cómo funciona?</h2></div>
+      <p>Completa tus datos, indica qué necesitas y selecciona la modalidad que más te convenga. El negocio deberá confirmar la disponibilidad y el precio final.</p>
+    </div>
+    <div class="info-cards">
+      <div class="info"><div class="icon">📝</div><h4>1. Haz tu solicitud</h4><p>Indica la cantidad, tus datos y la hora deseada.</p></div>
+      <div class="info"><div class="icon">🕒</div><h4>2. Elige el horario</h4><p>Solicita atención inmediata o reserva para más tarde.</p></div>
+      <div class="info"><div class="icon">🤝</div><h4>3. Confirma el pedido</h4><p>El negocio se comunica contigo para confirmar precio y entrega.</p></div>
+    </div>
+  </section>
+  <section id="pedido" style="margin-top:58px">
+    <div class="section-head">
+      <div><div class="tag">Formulario de pedido</div><h2>Reserva o pide tu producto</h2></div>
+      <p>Los campos con * son obligatorios. Esta versión genera un resumen de tu solicitud en esta página.</p>
+    </div>
+    <div class="content-grid">
+      <div class="panel">
+        <h3>Datos del cliente</h3><p class="sub">Déjanos la información necesaria para contactarte.</p>
+        <form id="orderForm">
+          <div class="field"><label for="name">Nombre completo *</label><input id="name" name="name" autocomplete="name" required placeholder="Ej. Juan Pérez"></div>
+          <div class="two">
+            <div class="field"><label for="phone">Teléfono / WhatsApp *</label><input id="phone" name="phone" type="tel" autocomplete="tel" required placeholder="Ej. 7XXXXXXX"></div>
+            <div class="field"><label for="quantity">Cantidad *</label><input id="quantity" name="quantity" type="number" min="1" step="1" required value="1"></div>
+          </div>
+          <div class="field"><label for="kind">Tipo de solicitud *</label><select id="kind" name="kind" required><option value="Pedido inmediato">Pedido inmediato</option><option value="Reserva para más tarde">Reserva para más tarde</option></select></div>
+          <div class="two">
+            <div class="field"><label for="date">Fecha deseada *</label><input id="date" name="date" type="date" required></div>
+            <div class="field"><label for="time">Hora deseada *</label><input id="time" name="time" type="time" required></div>
+          </div>
+          <div class="field"><label>¿Cómo quieres recibirlo? *</label><div class="choice-row">
+            <label class="choice"><input type="radio" name="delivery" value="Recoger en tienda" checked><span><strong>Recoger en tienda</strong><small>En el punto de San Carlos</small></span></label>
+            <label class="choice"><input type="radio" name="delivery" value="Consultar entrega"><span><strong>Consultar entrega</strong><small>Confirmar cobertura y costo</small></span></label>
+          </div></div>
+          <div class="field"><label for="address">Dirección (si corresponde)</label><input id="address" name="address" placeholder="Zona, calle o referencia"></div>
+          <div class="field"><label for="notes">Detalles adicionales</label><textarea id="notes" name="notes" placeholder="Escribe aquí cualquier indicación para tu pedido..."></textarea></div>
+          <div class="note">Importante: enviar este formulario no significa que el pedido ya esté confirmado. El negocio debe verificar disponibilidad, precio y modalidad de entrega.</div>
+          <button class="btn btn-primary full" type="submit">Generar mi solicitud →</button>
+        </form>
+        <div id="confirmation" role="status" aria-live="polite"></div>
+        <button id="copyBtn" class="btn btn-outline full" type="button" style="display:none;margin-top:10px;color:var(--green);border-color:#cbd9c7">Copiar resumen</button>
+      </div>
+      <div class="panel">
+        <h3>Información del negocio</h3><p class="sub">Un servicio pensado para facilitar el abastecimiento en la zona de San Carlos.</p>
+        <div style="background:#f0f4e9;border-radius:16px;padding:20px;margin-bottom:18px">
+          <div style="font-size:28px">📍</div><strong>Ubicación</strong><p style="color:#657165;line-height:1.55;margin-bottom:0">Calle San Carlos. Agrega aquí el número de puerta o una referencia exacta antes de publicar el sitio.</p>
+        </div>
+        <div style="background:#f0f4e9;border-radius:16px;padding:20px;margin-bottom:18px">
+          <div style="font-size:28px">⏰</div><strong>Horario anunciado</strong><p style="color:#657165;line-height:1.55;margin-bottom:0">Atención continua, 24 horas. La confirmación de pedidos dependerá de la disponibilidad del producto.</p>
+        </div>
+        <div style="background:#f0f4e9;border-radius:16px;padding:20px">
+          <div style="font-size:28px">💬</div><strong>Confirmación directa</strong><p style="color:#657165;line-height:1.55;margin-bottom:0">Para recibir pedidos reales por WhatsApp, configura el número oficial del negocio y conecta el formulario a un canal de atención.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer><div><strong>🌿 LA SAGRADA</strong><br><span>Tu pedido, más fácil y a cualquier hora.</span></div><span>© <span id="year"></span> La Sagrada · Sitio demostrativo</span></footer>
+<script src="js/script.js"></script>
+</body>
+</html>
